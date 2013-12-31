@@ -1,0 +1,10 @@
+markdown: html_pipeline
+html_pipeline:
+  filters:
+    - "markdownfilter"
+    - "sanitizationfilter"
+    - "emojifilter"
+    - "mentionfilter"
+  context:
+    asset_root: "http://foo.com/icons"
+    base_url:   "https://github.com/"

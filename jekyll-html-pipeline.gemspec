@@ -18,10 +18,12 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
+  spec.add_dependency "jekyll",    "~> 1.4.2"
   spec.add_dependency('html-pipeline', "~> 1.0.0")
 
   spec.add_development_dependency "bundler", "~> 1.4"
   spec.add_development_dependency "rake"
+  spec.add_development_dependency "rspec"
   spec.add_development_dependency('github-markdown', "~> 0.6.3")
   spec.add_development_dependency('sanitize', "~> 2.0.6")
   spec.add_development_dependency('gemoji', "~> 1.5.0")
