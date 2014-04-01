@@ -54,3 +54,9 @@ html_pipeline:
 
 Keep in mind that [filter dependencies are not bundled](https://github.com/jch/html-pipeline#dependencies),
 so you'll need to add these in yourself.
+
+## Custom filters
+
+Custom filters can be designed [the same as in HTML::Pipeline](https://github.com/jch/html-pipeline#extending).
+
+Check out [the test filter](./support/new_pipeline.rb) for an example.
