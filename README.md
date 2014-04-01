@@ -17,7 +17,7 @@ gems:
 
 ## Configuration
 
-You'll need to be running a Jekyll version after 1.4.3, which is when custom
+You'll need to be running a Jekyll version after 2.0.0, which is when custom
 Markdown filters were introduced. In your *_config.yml* file, indicate that you
 want to use `html_pipeline`:
 
