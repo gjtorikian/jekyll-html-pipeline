@@ -24,16 +24,18 @@ class HTMLPipeline < Test::Unit::TestCase
       assert_equal "<p><strong>Hey, <a href=\"https://github.com/mojombo\" class=\"user-mention\">@mojombo</a></strong>!</p>", @markdown.convert('**Hey, @mojombo**!').strip
     end
 
-    # should "fail when a library dependency is not met" do
-    #   override = { 'html_pipeline' => { 'filters' => ['markdownfilter, AutolinkFilter'] } }
-    #   markdown = Converters::Markdown.new(@config.deep_merge(override))
-    #   # assert_fail markdown.convert('http://www.github.com')
-    # end
-    #
-    # should "fail when a context dependency is not met" do
-    #   override = { 'html_pipeline' => { 'context' => {} } }
-    #   markdown = Converters::Markdown.new(@config.deep_merge(override))
-    #   # assert_fail markdown.convert(':trollface:')
-    # end
+    should "fail when a library dependency is not met" do
+      override = @config.dup
+      override['html_pipeline']['filters'] << 'AutolinkFilter'
+      markdown = Jekyll::Converters::Markdown.new override
+      assert_raise(LoadError) { markdown.convert('http://www.github.com') }
+    end
+
+    should "fail when a context dependency is not met" do
+      override = @config.dup
+      override['html_pipeline'].delete 'context'
+      markdown = Jekyll::Converters::Markdown.new override
+      assert_raise(ArgumentError) { markdown.convert(':trollface:') }
+    end
   end
 end

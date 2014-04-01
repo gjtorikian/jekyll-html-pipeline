@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/gjtorikian/jekyll-html-pipeline.svg?branch=add-invalid-tests)](https://travis-ci.org/gjtorikian/jekyll-html-pipeline)
+
 jekyll-html-pipeline
 ====================
 
