@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = "jekyll-html-pipeline"
-  spec.version       = "0.0.1"
+  spec.version       = "0.1.0"
   spec.authors       = ["Garen Torikian"]
   spec.email         = ["gjtorikian@gmail.com"]
   spec.summary       = %q{Use GitHub's HTML::Pipeline, in Jekyll!}
