@@ -29,11 +29,12 @@ class HTMLPipeline < Test::Unit::TestCase
     #   markdown = Converters::Markdown.new(@config.deep_merge(override))
     #   # assert_fail markdown.convert('http://www.github.com')
     # end
-    #
-    # should "fail when a context dependency is not met" do
-    #   override = { 'html_pipeline' => { 'context' => {} } }
-    #   markdown = Converters::Markdown.new(@config.deep_merge(override))
-    #   # assert_fail markdown.convert(':trollface:')
-    # end
+
+    should "fail when a context dependency is not met" do
+      override = @config.dup
+      override['html_pipeline'].delete 'context'
+      markdown = Jekyll::Converters::Markdown.new override
+      assert_raise(ArgumentError) { markdown.convert(':trollface:') }
+    end
   end
 end
