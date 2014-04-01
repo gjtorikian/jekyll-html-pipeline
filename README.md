@@ -9,7 +9,8 @@ An [HTML::Pipeline](https://github.com/jch/html-pipeline), for Jekyll.
 In your *_config.yml* file, add this gem:
 
 ``` yaml
-gems: [jekyll-html-pipeline]
+gems:
+  - jekyll-html-pipeline
 ```
 
 ## Configuration
@@ -19,13 +20,13 @@ Markdown filters were introduced. In your *_config.yml* file, indicate that you
 want to use `html_pipeline`:
 
 ``` yaml
-markdown: html_pipeline
+markdown: HTMLPipeline
 ```
 
 Next, create an `html_pipeline` key, and indicate which filters you want to include:
 
 ``` yaml
-markdown: html_pipeline
+markdown: HTMLPipeline
 html_pipeline:
   filters:
     - "markdownfilter"
@@ -37,7 +38,7 @@ html_pipeline:
 Finally, some filters require a context object. You can define these next:
 
 ``` yaml
-markdown: html_pipeline
+markdown: HTMLPipeline
 html_pipeline:
   filters:
     - "markdownfilter"

@@ -1,11 +1,6 @@
-# coding: utf-8
-lib = File.expand_path('../lib', __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'jekyll/html/pipeline/version'
-
 Gem::Specification.new do |spec|
   spec.name          = "jekyll-html-pipeline"
-  spec.version       = Jekyll::Html::Pipeline::VERSION
+  spec.version       = "0.0.1"
   spec.authors       = ["Garen Torikian"]
   spec.email         = ["gjtorikian@gmail.com"]
   spec.summary       = %q{TODO: Write a short summary. Required.}
@@ -18,13 +13,14 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "jekyll",    "~> 1.4.2"
+  spec.add_dependency "jekyll",    "~> 2.0.0.alpha.1 "
   spec.add_dependency('html-pipeline', "~> 1.0.0")
 
   spec.add_development_dependency "bundler", "~> 1.4"
   spec.add_development_dependency "rake"
-  spec.add_development_dependency "rspec"
+  spec.add_development_dependency('shoulda', "~> 3.5")
   spec.add_development_dependency('github-markdown', "~> 0.6.3")
   spec.add_development_dependency('sanitize', "~> 2.0.6")
   spec.add_development_dependency('gemoji', "~> 1.5.0")
+  spec.add_development_dependency "rouge"
 end
