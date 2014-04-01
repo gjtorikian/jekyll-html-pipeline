@@ -59,4 +59,4 @@ so you'll need to add these in yourself.
 
 Custom filters can be designed [the same as in HTML::Pipeline](https://github.com/jch/html-pipeline#extending).
 
-Check out [the test filter](./support/new_pipeline.rb) for an example.
+Check out [the test filter](./test/support/new_pipeline.rb) for an example.
