@@ -17,11 +17,26 @@ module Jekyll
         false
       end
 
+      def symbolize_keys(hash)
+        hash.inject({}){|result, (key, value)|
+          new_key = case key
+                    when String then key.to_sym
+                    else key
+                    end
+          new_value = case value
+                      when Hash then symbolize_keys(value)
+                      else value
+                      end
+          result[new_key] = new_value
+          result
+        }
+      end
+
       def ensure_default_opts
         @config['html_pipeline']['filters'] ||= ['markdownfilter']
         @config['html_pipeline']['context'] ||= {'gfm' => true}
         # symbolize strings as keys, which is what HTML::Pipeline wants
-        @config['html_pipeline']['context'] = @config['html_pipeline']['context'].symbolize_keys
+        @config['html_pipeline']['context'] = symbolize_keys(@config['html_pipeline']['context'])
       end
 
       def setup
