@@ -37,5 +37,14 @@ class HTMLPipeline < Test::Unit::TestCase
       markdown = Jekyll::Converters::Markdown.new override
       assert_raise(ArgumentError) { markdown.convert(':trollface:') }
     end
+
+    should "work for custom filters" do
+      require 'support/new_pipeline'
+      override = @config.dup
+      override['html_pipeline']['filters'] = ['HelpMarkdownFilter']
+      markdown = Jekyll::Converters::Markdown.new override
+      text = "\n {{#tip}}\n **Tip**: Wow! \n {{/tip}}"
+      assert_equal "<div class=\"alert tip\"><br>\n <strong>Tip</strong>: Wow! <br>\n </div>", markdown.convert(text)
+    end
   end
 end

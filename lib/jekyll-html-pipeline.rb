@@ -35,7 +35,12 @@ module Jekyll
               key = filter_key(f)
               begin
                 filter = HTML::Pipeline.constants.find { |c| c.downcase == key }
-                HTML::Pipeline.const_get(filter)
+                # probably a custom filter
+                if filter.nil?
+                  Jekyll::Converters.const_get(f)
+                else
+                  HTML::Pipeline.const_get(filter)
+                end
               rescue Exception => e
                 raise LoadError.new(e)
               end
