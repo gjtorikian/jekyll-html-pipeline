@@ -22,5 +22,4 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'github-markdown', "~> 0.6.3"
   spec.add_development_dependency 'sanitize', "~> 2.0.6"
   spec.add_development_dependency 'gemoji', "~> 1.5.0"
-  spec.add_development_dependency "rouge"
 end
