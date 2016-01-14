@@ -15,8 +15,6 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency "jekyll", ">= 2.0"
   spec.add_dependency 'html-pipeline', ">= 1.0"
-  spec.add_dependency 'rinku', "~> 1.7" # Required for autolink filter
-  spec.add_dependency 'gemoji', "~> 2.0"
 
   spec.add_development_dependency "bundler", "~> 1.4"
   spec.add_development_dependency "rake"
