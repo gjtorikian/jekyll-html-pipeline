@@ -14,12 +14,12 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_runtime_dependency "jekyll", ">= 2.0"
-  spec.add_dependency 'html-pipeline', "~> 1.0"
+  spec.add_dependency 'html-pipeline', ">= 1.0"
 
   spec.add_development_dependency "bundler", "~> 1.4"
   spec.add_development_dependency "rake"
   spec.add_development_dependency 'minitest', "~> 5.0"
   spec.add_development_dependency 'github-markdown', "~> 0.6.3"
   spec.add_development_dependency 'sanitize', "~> 2.0.6"
-  spec.add_development_dependency 'gemoji', "~> 1.5.0"
+  spec.add_development_dependency 'gemoji', "~> 2.0"
 end
