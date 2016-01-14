@@ -4,7 +4,6 @@ require "jekyll"
 require "liquid"
 
 require 'minitest/autorun'
-require 'html/pipeline'
 
 require "jekyll-html-pipeline"
 
