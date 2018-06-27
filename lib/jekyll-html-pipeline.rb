@@ -18,7 +18,7 @@ module Jekyll
       end
 
       def symbolize_keys(hash)
-        hash.inject({}){|result, (key, value)|
+        hash.inject({}) { |result, (key, value)|
           new_key = case key
                     when String then key.to_sym
                     else key
@@ -56,7 +56,7 @@ module Jekyll
                 else
                   HTML::Pipeline.const_get(filter)
                 end
-              rescue Exception => e
+              rescue StandardError => e
                 raise LoadError.new(e)
               end
             end

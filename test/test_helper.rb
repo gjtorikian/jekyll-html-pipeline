@@ -1,11 +1,11 @@
-require "rubygems"
+require 'rubygems'
 
-require "jekyll"
-require "liquid"
+require 'jekyll'
+require 'liquid'
 
 require 'minitest/autorun'
 
-require "jekyll-html-pipeline"
+require 'jekyll-html-pipeline'
 
 # Send STDERR into the void to suppress program output messages
 # STDERR.reopen(test(?e, '/dev/null') ? '/dev/null' : 'NUL:')

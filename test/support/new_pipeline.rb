@@ -1,4 +1,4 @@
-require "html/pipeline"
+require 'html/pipeline'
 
 class HelpMarkdownFilter < HTML::Pipeline::MarkdownFilter
 
