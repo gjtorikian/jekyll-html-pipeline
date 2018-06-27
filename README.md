@@ -1,10 +1,8 @@
 [![Build Status](https://travis-ci.org/gjtorikian/jekyll-html-pipeline.svg?branch=master)](https://travis-ci.org/gjtorikian/jekyll-html-pipeline)
 
-jekyll-html-pipeline
-====================
+# jekyll-html-pipeline
 
 An [HTML::Pipeline](https://github.com/jch/html-pipeline), for Jekyll.
-
 
 ## Installation
 
