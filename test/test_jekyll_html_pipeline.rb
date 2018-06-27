@@ -43,6 +43,6 @@ class HTMLPipelineTest < Converter::HTMLPipelineTestCase
     override['html_pipeline']['filters'] = ['HelpMarkdownFilter']
     markdown = Jekyll::Converters::Markdown.new override
     text = "\n {{#tip}}\n **Tip**: Wow! \n {{/tip}}"
-    assert_equal "<div class=\"alert tip\"><br>\n <strong>Tip</strong>: Wow! <br>\n </div>", markdown.convert(text)
+    assert_equal "<div class=\"alert tip\"><br />\n<strong>Tip</strong>: Wow!<br />\n</div>", markdown.convert(text)
   end
 end
