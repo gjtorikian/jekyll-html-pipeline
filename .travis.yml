@@ -1,13 +1,16 @@
 language: ruby
 rvm:
-  - 2.0
-  - 2.1
-  - 2.2
-
-sudo: false
-
-cache:
-  - bundler
+  - 2.3.6
+  - 2.4.3
+  - 2.5.0
 
 git:
   depth: 10
+
+sudo: false
+cache: bundler
+
+matrix:
+  include:
+    - script: bundle exec rake rubocop
+      rvm: 2.5.0
