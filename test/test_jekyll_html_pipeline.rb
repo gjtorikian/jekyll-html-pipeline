@@ -5,7 +5,12 @@ class HTMLPipelineTest < Converter::HTMLPipelineTestCase
     @config = {
       'html_pipeline' => {
         'filters' => ['markdownfilter', 'sanitizationfilter', 'emojifilter', 'mentionfilter'],
-        'context' => { 'asset_root' => 'http://foo.com/icons', 'base_url' => 'https://github.com/'}},
+        'context' => {
+          'asset_root' => 'http://foo.com/icons',
+          'base_url' => 'https://github.com/',
+          'commonmarker_extensions' => ['table', 'strikethrough', 'tagfilter', 'autolink']
+        }
+      },
       'markdown' => 'HTMLPipeline'
     }
     @markdown = Jekyll::Converters::Markdown.new @config

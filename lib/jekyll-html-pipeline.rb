@@ -25,6 +25,7 @@ module Jekyll
                     end
           new_value = case value
                       when Hash then symbolize_keys(value)
+                      when Array then value.map &:to_sym
                       else value
                       end
           result[new_key] = new_value
