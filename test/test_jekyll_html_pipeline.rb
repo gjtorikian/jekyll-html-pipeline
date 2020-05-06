@@ -1,14 +1,16 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
 class HTMLPipelineTest < Converter::HTMLPipelineTestCase
   def setup
     @config = {
       'html_pipeline' => {
-        'filters' => ['markdownfilter', 'sanitizationfilter', 'emojifilter', 'mentionfilter'],
+        'filters' => %w[markdownfilter sanitizationfilter emojifilter mentionfilter],
         'context' => {
           'asset_root' => 'http://foo.com/icons',
           'base_url' => 'https://github.com/',
-          'commonmarker_extensions' => ['table', 'strikethrough', 'tagfilter', 'autolink']
+          'commonmarker_extensions' => %w[table strikethrough tagfilter autolink]
         }
       },
       'markdown' => 'HTMLPipeline'
